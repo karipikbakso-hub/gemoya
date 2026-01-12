@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Ibu Rina",
+    "location": "Jogja",
+    "babyAge": "4 bulan",
+    "rating": 5,
+    "photo": "/images/testimonial-1.jpg",
+    "text": "Bayiku jadi lebih rileks dan tidurnya pules banget setelah baby spa Gemoya. Terapisnya juga sabar banget ngajarin cara pijat yang bener! Recommended 100%!",
+    "service": "Baby Spa Hydrotherapy"
+  },
+  {
+    "id": 2,
+    "name": "Ibu Sarah",
+    "location": "Sleman",
+    "babyAge": "6 bulan",
+    "rating": 5,
+    "photo": "/images/testimonial-2.jpg",
+    "text": "Paket Mom & Baby-nya worth it banget! Aku diurut pegel-pegel, dedek bayi juga happy. Terapisnya ramah dan profesional. Pasti langganan deh!",
+    "service": "Paket Mom & Baby 6x"
+  },
+  {
+    "id": 3,
+    "name": "Ibu Dita",
+    "location": "Bantul",
+    "babyAge": "2 bulan",
+    "rating": 5,
+    "photo": "/images/testimonial-3.jpg",
+    "text": "Konsultasi laktasinya membantu banget pas ASI ku seret. Dikasih tips dan pijatannya juga enak. Sekarang ASI lancar lagi alhamdulillah! Makasih Gemoya!",
+    "service": "Konsultasi Laktasi + Pijat Pelancar ASI"
+  }
+]

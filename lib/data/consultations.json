@@ -1,0 +1,72 @@
+[
+  {
+    "id": "konsul-1",
+    "name": "Konsultasi Tumbuh Kembang",
+    "slug": "konsultasi-tumbuh-kembang",
+    "duration": "30 menit",
+    "price": 75000,
+    "priceDisplay": "Rp 75.000",
+    "method": "Online via Zoom/Google Meet",
+    "icon": "VideoIcon",
+    "description": "Konsultasi dengan bidan berpengalaman 12+ tahun",
+    "expert": "Bidan Lita, A.Md.Keb",
+    "includes": [
+      "Cek milestone bayi",
+      "Rekomendasi stimulasi yang tepat",
+      "Follow up via WA 7 hari",
+      "Catatan konsultasi (PDF)"
+    ]
+  },
+  {
+    "id": "konsul-2",
+    "name": "Konsultasi Laktasi",
+    "slug": "konsultasi-laktasi",
+    "duration": "30 menit",
+    "price": 85000,
+    "priceDisplay": "Rp 85.000",
+    "method": "Online via Zoom/Google Meet",
+    "icon": "VideoIcon",
+    "description": "Konsultasi dengan konselor laktasi sertifikat AIMI",
+    "expert": "Konselor Laktasi Sertifikat AIMI",
+    "includes": [
+      "Solusi pelekatan bayi",
+      "Manajemen ASI sedikit/banyak",
+      "Tips ASIP dan relaktasi",
+      "Follow up via WA 7 hari"
+    ]
+  },
+  {
+    "id": "konsul-3",
+    "name": "Konsultasi Parenting",
+    "slug": "konsultasi-parenting",
+    "duration": "30 menit",
+    "price": 70000,
+    "priceDisplay": "Rp 70.000",
+    "method": "Online via Zoom/Google Meet",
+    "icon": "VideoIcon",
+    "description": "Konsultasi dengan psikolog anak berpengalaman",
+    "expert": "Psikolog Anak (S.Psi, M.Psi)",
+    "includes": [
+      "Pola asuh usia 0-5 tahun",
+      "Sleep training tips",
+      "Tantrum handling",
+      "Follow up via WA 7 hari"
+    ]
+  },
+  {
+    "id": "konsul-4",
+    "name": "Rujukan Medis",
+    "slug": "rujukan-medis",
+    "duration": "-",
+    "price": 0,
+    "priceDisplay": "GRATIS",
+    "method": "Rujukan ke RS/Klinik terpercaya",
+    "icon": "Hospital",
+    "description": "Gratis untuk pengguna layanan Gemoya",
+    "includes": [
+      "Referral ke dokter spesialis anak",
+      "Rekomendasi RS/klinik terpercaya Jogja",
+      "Koordinasi appointment"
+    ]
+  }
+]

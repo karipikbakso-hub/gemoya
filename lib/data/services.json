@@ -1,0 +1,372 @@
+[
+  {
+    "id": "baby-1",
+    "name": "Pijat Bayi",
+    "slug": "pijat-bayi",
+    "duration": "45 menit",
+    "price": 80000,
+    "priceDisplay": "Rp 80.000",
+    "category": "baby-care",
+    "badge": "Paling Laris",
+    "icon": "Baby",
+    "description": "Pijat lembut seluruh tubuh untuk relaksasi dan tidur nyenyak bayi",
+    "benefits": [
+      "Tidur lebih nyenyak",
+      "Bonding ibu-bayi",
+      "Relaksasi otot",
+      "Stimulasi peredaran darah"
+    ],
+    "image": "https://images.unsplash.com/photo-1544733231-6ea5ce4e1a82?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "baby-2",
+    "name": "Baby Spa",
+    "slug": "baby-spa",
+    "duration": "60 menit",
+    "price": 115000,
+    "priceDisplay": "Rp 115.000",
+    "category": "baby-care",
+    "badge": "Premium",
+    "icon": "Waves",
+    "description": "Spa lengkap untuk bayi dengan hidroterapi dan relaksasi",
+    "benefits": [
+      "Stimulasi motorik kasar",
+      "Melatih keseimbangan",
+      "Bayi lebih ceria",
+      "Foto dokumentasi HD"
+    ],
+    "image": "https://images.unsplash.com/photo-1582560469781-1965b9c68b43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "baby-3",
+    "name": "Cukur Rambut Bayi",
+    "slug": "cukur-rambut-bayi",
+    "duration": "30 menit",
+    "price": 60000,
+    "priceDisplay": "Rp 60.000",
+    "category": "baby-care",
+    "icon": "Scissors",
+    "description": "Cukur rambut bayi yang aman dan nyaman",
+    "benefits": [
+      "Rambut bayi rapi",
+      "Mengurangi ketombe",
+      "Mencegah iritasi kulit",
+      "Proses aman & steril"
+    ],
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "baby-4",
+    "name": "Memandikan Bayi Baru Lahir",
+    "slug": "memandikan-bayi-baru-lahir",
+    "duration": "45 menit",
+    "price": 50000,
+    "priceDisplay": "Rp 50.000",
+    "category": "baby-care",
+    "badge": "Paket Hemat",
+    "icon": "Droplets",
+    "description": "Memandikan bayi baru lahir dengan teknik yang tepat dan aman oleh bidan profesional",
+    "benefits": [
+      "Membersihkan tubuh bayi",
+      "Mencegah infeksi",
+      "Menjaga kebersihan kulit",
+      "Edukasi orangtua",
+      "Paket hemat tersedia"
+    ],
+    "image": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "baby-5",
+    "name": "Pijat Batuk Pilek",
+    "slug": "pijat-batuk-pilek",
+    "duration": "45 menit",
+    "price": 90000,
+    "priceDisplay": "Rp 90.000",
+    "category": "baby-care",
+    "icon": "Thermometer",
+    "description": "Pijat khusus untuk mengatasi batuk dan pilek pada bayi",
+    "benefits": [
+      "Meredakan batuk",
+      "Mengeluarkan lendir",
+      "Memperbaiki pernafasan",
+      "Meningkatkan imunitas"
+    ],
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "baby-6",
+    "name": "Pijat Kolik/Sembelit",
+    "slug": "pijat-kolik-sembelit",
+    "duration": "45 menit",
+    "price": 90000,
+    "priceDisplay": "Rp 90.000",
+    "category": "baby-care",
+    "icon": "Stomach",
+    "description": "Pijat perut untuk mengatasi kolik dan sembelit pada bayi",
+    "benefits": [
+      "Meredakan kolik",
+      "Mengatasi sembelit",
+      "Memperbaiki pencernaan",
+      "Menenangkan bayi"
+    ],
+    "image": "https://images.unsplash.com/photo-1544733231-6ea5ce4e1a82?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "baby-7",
+    "name": "Terapi Uap/Nebulizer",
+    "slug": "terapi-uap-nebulizer",
+    "duration": "30 menit",
+    "price": 95000,
+    "priceDisplay": "Rp 95.000",
+    "category": "baby-care",
+    "icon": "Cloud",
+    "description": "Terapi uap untuk melegakan pernafasan bayi",
+    "benefits": [
+      "Melegakan pernafasan",
+      "Mengencerkan lendir",
+      "Meredakan batuk",
+      "Memperbaiki fungsi paru"
+    ],
+    "image": "https://images.unsplash.com/photo-1582560469781-1965b9c68b43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "kids-1",
+    "name": "Pijat Anak",
+    "slug": "pijat-anak",
+    "duration": "45 menit",
+    "price": 100000,
+    "priceDisplay": "Rp 100.000",
+    "category": "kids-care",
+    "icon": "Smile",
+    "description": "Pijat relaksasi untuk anak usia 1-5 tahun",
+    "benefits": [
+      "Relaksasi otot",
+      "Imunitas alami",
+      "Tidur lebih nyenyak",
+      "Mengurangi stress"
+    ],
+    "image": "https://images.unsplash.com/photo-1544569226-44165ff6e324?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "kids-2",
+    "name": "Kid Spa",
+    "slug": "kid-spa",
+    "duration": "60 menit",
+    "price": 135000,
+    "priceDisplay": "Rp 135.000",
+    "category": "kids-care",
+    "badge": "Premium",
+    "icon": "Activity",
+    "description": "Spa lengkap untuk anak dengan berbagai treatment menyenangkan",
+    "benefits": [
+      "Relaksasi penuh",
+      "Kesehatan kulit",
+      "Meningkatkan imunitas",
+      "Pengalaman menyenangkan"
+    ],
+    "image": "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "kids-3",
+    "name": "Pijat Batuk Pilek Anak",
+    "slug": "pijat-batuk-pilek-anak",
+    "duration": "45 menit",
+    "price": 110000,
+    "priceDisplay": "Rp 110.000",
+    "category": "kids-care",
+    "icon": "Thermometer",
+    "description": "Pijat khusus untuk mengatasi batuk dan pilek pada anak",
+    "benefits": [
+      "Meredakan batuk",
+      "Mengeluarkan lendir",
+      "Memperbaiki pernafasan",
+      "Meningkatkan imunitas"
+    ],
+    "image": "https://images.unsplash.com/photo-1544569226-44165ff6e324?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "kids-4",
+    "name": "Pijat Kolik/Sembelit Anak",
+    "slug": "pijat-kolik-sembelit-anak",
+    "duration": "45 menit",
+    "price": 110000,
+    "priceDisplay": "Rp 110.000",
+    "category": "kids-care",
+    "icon": "Stomach",
+    "description": "Pijat perut untuk mengatasi kolik dan sembelit pada anak",
+    "benefits": [
+      "Meredakan kolik",
+      "Mengatasi sembelit",
+      "Memperbaiki pencernaan",
+      "Menenangkan anak"
+    ],
+    "image": "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "kids-5",
+    "name": "Terapi Uap/Nebulizer Anak",
+    "slug": "terapi-uap-nebulizer-anak",
+    "duration": "30 menit",
+    "price": 105000,
+    "priceDisplay": "Rp 105.000",
+    "category": "kids-care",
+    "icon": "Cloud",
+    "description": "Terapi uap untuk melegakan pernafasan anak",
+    "benefits": [
+      "Melegakan pernafasan",
+      "Mengencerkan lendir",
+      "Meredakan batuk",
+      "Memperbaiki fungsi paru"
+    ],
+    "image": "https://images.unsplash.com/photo-1544569226-44165ff6e324?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "mom-1",
+    "name": "Pijat Ibu Hamil",
+    "slug": "pijat-ibu-hamil",
+    "duration": "60 menit",
+    "price": 125000,
+    "priceDisplay": "Rp 125.000",
+    "category": "mom-care",
+    "badge": "Recommended",
+    "icon": "Heart",
+    "description": "Pijat relaksasi khusus untuk ibu hamil trimester 2-3",
+    "benefits": [
+      "Mengurangi pegal-pegal",
+      "Meredakan stress",
+      "Meningkatkan sirkulasi",
+      "Persiapan persalinan"
+    ],
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "mom-2",
+    "name": "Pijat Ibu Pasca Lahiran",
+    "slug": "pijat-ibu-pasca-lahiran",
+    "duration": "60 menit",
+    "price": 135000,
+    "priceDisplay": "Rp 135.000",
+    "category": "mom-care",
+    "icon": "Heart",
+    "description": "Pijat pemulihan untuk ibu setelah melahirkan",
+    "benefits": [
+      "Pemulihan tubuh",
+      "Mengurangi pegal-pegal",
+      "Meningkatkan energi",
+      "Relaksasi pasca persalinan"
+    ],
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "mom-3",
+    "name": "Mom Spa",
+    "slug": "mom-spa",
+    "duration": "90 menit",
+    "price": 175000,
+    "priceDisplay": "Rp 175.000",
+    "category": "mom-care",
+    "badge": "Premium",
+    "icon": "Sparkles",
+    "description": "Spa lengkap untuk ibu dengan berbagai treatment relaksasi",
+    "benefits": [
+      "Relaksasi total",
+      "Perawatan kulit",
+      "Meningkatkan energi",
+      "Me-time berkualitas"
+    ],
+    "image": "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "mom-4",
+    "name": "Pijat Oksitosin/Laktasi",
+    "slug": "pijat-oksitosin-laktasi",
+    "duration": "50 menit",
+    "price": 145000,
+    "priceDisplay": "Rp 145.000",
+    "category": "mom-care",
+    "icon": "Milk",
+    "description": "Pijat relaksasi payudara untuk membantu kelancaran ASI",
+    "benefits": [
+      "Membantu kelancaran ASI",
+      "Relaksasi area payudara",
+      "Mencegah mastitis",
+      "Bonding moment"
+    ],
+    "disclaimer": "Bukan klaim medis, sebagai terapi pendukung laktasi alami",
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "mom-5",
+    "name": "Perawatan Luka Jahitan Melahirkan",
+    "slug": "perawatan-luka-jahitan",
+    "duration": "45 menit",
+    "price": 155000,
+    "priceDisplay": "Rp 155.000",
+    "category": "mom-care",
+    "icon": "Bandage",
+    "description": "Perawatan khusus untuk luka jahitan pasca persalinan",
+    "benefits": [
+      "Perawatan luka steril",
+      "Mempercepat penyembuhan",
+      "Mencegah infeksi",
+      "Relaksasi area perut"
+    ],
+    "image": "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "consult-1",
+    "name": "Konsultasi dengan Bidan Profesional",
+    "slug": "konsultasi-bidan-profesional",
+    "duration": "45 menit",
+    "price": 120000,
+    "priceDisplay": "Rp 120.000",
+    "category": "consultation",
+    "badge": "Recommended",
+    "icon": "Stethoscope",
+    "description": "Konsultasi kesehatan bayi dengan bidan profesional bersertifikat",
+    "benefits": [
+      "Konsultasi kesehatan bayi",
+      "Saran perawatan & nutrisi",
+      "Monitoring tumbuh kembang",
+      "Penanganan masalah ringan"
+    ],
+    "image": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "consult-2",
+    "name": "Konsultasi Gizi & Nutrisi",
+    "slug": "konsultasi-gizi-nutrisi",
+    "duration": "45 menit",
+    "price": 150000,
+    "priceDisplay": "Rp 150.000",
+    "category": "consultation",
+    "icon": "Apple",
+    "description": "Konsultasi dengan ahli gizi untuk nutrisi bayi dan anak",
+    "benefits": [
+      "Saran pola makan bayi",
+      "Nutrisi untuk tumbuh kembang",
+      "Penanganan alergi makanan",
+      "Program nutrisi personal"
+    ],
+    "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "consult-3",
+    "name": "Konsultasi Tumbuh Kembang",
+    "slug": "konsultasi-tumbuh-kembang",
+    "duration": "45 menit",
+    "price": 180000,
+    "priceDisplay": "Rp 180.000",
+    "category": "consultation",
+    "badge": "Recommended",
+    "icon": "TrendingUp",
+    "description": "Evaluasi dan konsultasi perkembangan bayi/anak",
+    "benefits": [
+      "Evaluasi milestone",
+      "Deteksi dini keterlambatan",
+      "Program stimulasi",
+      "Saran perkembangan optimal"
+    ],
+    "image": "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  }
+]

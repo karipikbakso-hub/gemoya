@@ -1,0 +1,140 @@
+[
+  {
+    "id": "paket-6",
+    "name": "Paket Mandi Bayi 3x",
+    "slug": "paket-mandi-bayi-3x",
+    "type": "bundling",
+    "sessions": 3,
+    "validity": "1 bulan",
+    "price": 125000,
+    "priceDisplay": "Rp 125.000",
+    "normalPrice": 150000,
+    "discount": 17,
+    "badge": "Hemat 17%",
+    "icon": "Droplets",
+    "description": "3x Memandikan Bayi dalam 1 bulan - cocok untuk bayi baru lahir",
+    "includes": [
+      "3x Memandikan Bayi (45 menit/sesi)",
+      "Dilakukan oleh bidan profesional",
+      "Gratis transport fee (area Jogja & Magelang)",
+      "Free reschedule 1x",
+      "Edukasi perawatan bayi"
+    ],
+    "image": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "paket-1",
+    "name": "Paket Newborn 4x",
+    "slug": "paket-newborn-4x",
+    "type": "bundling",
+    "sessions": 4,
+    "validity": "1 bulan",
+    "price": 280000,
+    "priceDisplay": "Rp 280.000",
+    "normalPrice": 320000,
+    "discount": 13,
+    "badge": "Hemat 13%",
+    "icon": "Package",
+    "description": "4x Pijat Bayi dalam 1 bulan - cocok untuk bayi baru lahir",
+    "includes": [
+      "4x Pijat Bayi (45 menit/sesi)",
+      "Gratis transport fee (area Jogja & Magelang)",
+      "Free reschedule 2x",
+      "1x Konsultasi Tumbuh Kembang GRATIS (online 30 menit)"
+    ],
+    "image": "https://images.unsplash.com/photo-1544733231-6ea5ce4e1a82?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "paket-4",
+    "name": "Membership Bulanan Basic",
+    "slug": "membership-bulanan-basic",
+    "type": "membership",
+    "sessions": 4,
+    "validity": "Recurring monthly",
+    "price": 280000,
+    "priceDisplay": "Rp 280.000/bulan",
+    "normalPrice": 320000,
+    "discount": 13,
+    "badge": "Hemat 13%",
+    "icon": "CalendarCheck",
+    "description": "Berlangganan 4x Pijat Bayi per bulan (auto-renewal)",
+    "includes": [
+      "4x Pijat Bayi per bulan",
+      "Gratis transport fee",
+      "Diskon 10% untuk layanan tambahan",
+      "Prioritas booking",
+      "Akumulasi poin → free session"
+    ],
+    "image": "https://images.unsplash.com/photo-1544569226-44165ff6e324?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "paket-3",
+    "name": "Paket Mom & Baby 6x",
+    "slug": "paket-mom-baby-6x",
+    "type": "bundling",
+    "sessions": 6,
+    "validity": "1.5 bulan",
+    "price": 580000,
+    "priceDisplay": "Rp 580.000",
+    "normalPrice": 690000,
+    "discount": 16,
+    "badge": "Hemat 16%",
+    "icon": "HeartHandshake",
+    "description": "3x Pijat Bayi + 3x Pijat Laktasi - paket untuk ibu & bayi",
+    "includes": [
+      "3x Pijat Bayi",
+      "3x Pijat Oksitosin/Laktasi",
+      "1x Konsultasi Laktasi GRATIS (online 30 menit)",
+      "Gratis transport fee",
+      "Follow up via WA"
+    ],
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "paket-5",
+    "name": "Membership Bulanan Premium",
+    "slug": "membership-bulanan-premium",
+    "type": "membership",
+    "sessions": 8,
+    "validity": "Recurring monthly",
+    "price": 600000,
+    "priceDisplay": "Rp 600.000/bulan",
+    "normalPrice": 760000,
+    "discount": 21,
+    "badge": "VIP - Hemat 21%",
+    "icon": "Crown",
+    "description": "Berlangganan 4x Pijat + 4x Baby Spa per bulan (VIP treatment)",
+    "includes": [
+      "4x Pijat Bayi + 4x Baby Spa per bulan",
+      "Foto dokumentasi HD setiap sesi",
+      "1x Konsultasi Tumbuh Kembang GRATIS per bulan",
+      "Diskon 15% untuk layanan tambahan",
+      "Gratis transport fee unlimited",
+      "Dedicated CS untuk member VIP"
+    ],
+    "image": "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": "paket-2",
+    "name": "Paket Baby Spa Premium 8x",
+    "slug": "paket-baby-spa-premium-8x",
+    "type": "bundling",
+    "sessions": 8,
+    "validity": "2 bulan",
+    "price": 760000,
+    "priceDisplay": "Rp 760.000",
+    "normalPrice": 920000,
+    "discount": 17,
+    "badge": "Best Value",
+    "icon": "Star",
+    "description": "4x Pijat Bayi + 4x Baby Spa dalam 2 bulan - treatment lengkap",
+    "includes": [
+      "4x Pijat Bayi",
+      "4x Baby Spa Hydrotherapy",
+      "Foto dokumentasi HD setiap sesi",
+      "Gratis transport fee",
+      "Prioritas booking"
+    ],
+    "image": "https://images.unsplash.com/photo-1582560469781-1965b9c68b43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+  }
+]
