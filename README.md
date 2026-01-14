@@ -85,9 +85,3 @@ If you encounter issues with `npm install`:
 - ✅ LocalBusiness structured data
 - ✅ Sitemap.xml
 - ✅ Robots.txt
-
-## Contact
-
-- WhatsApp: 0859-2025-5497
-- Instagram: @banuababyspa
-- Email: info@gemoya.id
