@@ -27,6 +27,10 @@ export async function POST(request: Request) {
     // Generate booking ID
     const bookingId = generateBookingId();
 
+    // Get service details
+    const servicesData = await import('@/lib/data/services.json');
+    const selectedService = servicesData.default.find(s => s.id === data.layanan);
+
     // Format the data for email
     const formattedDateTime = formatDateTime(data.tanggalJam);
 
@@ -34,7 +38,7 @@ export async function POST(request: Request) {
     const emailResult = await resend.emails.send({
       from: 'Gemoya Booking <booking@gemoya.id>',
       to: [process.env.EMAIL_TO || 'owner@gemoya.id'],
-      subject: `[BOOKING BARU] ${data.namaIbu} - ${data.layanan}`,
+      subject: `[BOOKING BARU] ${data.namaIbu} - ${selectedService?.name || data.layanan}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -65,36 +69,22 @@ export async function POST(request: Request) {
                 <span class="label">WhatsApp:</span> ${data.nomorWhatsApp}
               </div>
               <div class="detail-row">
-                <span class="label">Usia Bayi:</span> ${data.usiaBayi}
+                <span class="label">Layanan:</span> ${selectedService?.name || data.layanan}
               </div>
               <div class="detail-row">
-                <span class="label">Layanan:</span> ${data.layanan}
+                <span class="label">Harga:</span> ${selectedService?.priceDisplay || 'TBD'}
               </div>
-              ${data.addOn && data.addOn.length > 0 ? `
-              <div class="detail-row">
-                <span class="label">Add-On:</span> ${data.addOn.join(', ')}
-              </div>
-              ` : ''}
               <div class="detail-row">
                 <span class="label">Tanggal & Jam:</span> ${formattedDateTime}
               </div>
-              <div class="detail-row">
-                <span class="label">Alamat:</span> ${data.alamatLengkap}
-              </div>
-              <div class="detail-row">
-                <span class="label">Area:</span> ${data.area}
-              </div>
-              ${data.catatanKhusus ? `
-              <div class="detail-row">
-                <span class="label">Catatan Khusus:</span> ${data.catatanKhusus}
-              </div>
-              ` : ''}
             </div>
 
             <div class="footer">
               <p><strong>Waktu Booking:</strong> ${new Date().toLocaleString('id-ID')}</p>
-              <p>Silakan konfirmasi booking ini secepatnya via WhatsApp.</p>
-              <p>📞 Hubungi: 0859-2025-5497</p>
+              <p><strong>⚠️ DETAIL LENGKAP BELUM TERKUMPUL:</strong></p>
+              <p>Alamat, usia bayi, email, dan detail lainnya akan dikumpulkan via WhatsApp follow-up.</p>
+              <p>📞 Segera hubungi: <a href="https://wa.me/6285920255497?text=Halo%20${encodeURIComponent(data.namaIbu)}%2C%20terima%20kasih%20sudah%20booking%20layanan%20baby%20spa">0859-2025-5497</a></p>
+              <p>💬 <strong>Next Action:</strong> Collect alamat, usia bayi, email via WhatsApp</p>
             </div>
           </body>
         </html>

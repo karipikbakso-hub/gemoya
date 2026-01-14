@@ -21,7 +21,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section id="layanan">
-        <ServiceTabs />
+        <ServiceTabs onBookingClick={() => setIsBookingOpen(true)} />
       </section>
 
       {/* Packages Section */}
@@ -43,7 +43,11 @@ export default function Home() {
             <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
               {packagesData.map((pkg, index) => (
                 <div key={pkg.id} className="flex-shrink-0 w-64">
-                  <PackageCard pkg={pkg} isMobile={true} />
+                  <PackageCard
+                    pkg={pkg}
+                    isMobile={true}
+                    onBookingClick={() => setIsBookingOpen(true)}
+                  />
                 </div>
               ))}
             </div>
@@ -52,7 +56,11 @@ export default function Home() {
           {/* Desktop: Grid layout */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {packagesData.map((pkg, index) => (
-              <PackageCard key={pkg.id} pkg={pkg} />
+              <PackageCard
+                key={pkg.id}
+                pkg={pkg}
+                onBookingClick={() => setIsBookingOpen(true)}
+              />
             ))}
           </div>
         </div>

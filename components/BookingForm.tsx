@@ -2,19 +2,14 @@
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { X, Calendar, Clock, MapPin, Phone, CheckCircle } from 'lucide-react';
+import { X, Calendar, Clock, MapPin, Phone, CheckCircle, AlertCircle, Check } from 'lucide-react';
 import servicesData from '@/lib/data/services.json';
 
 interface BookingFormData {
   namaIbu: string;
   nomorWhatsApp: string;
-  usiaBayi: string;
   layanan: string;
-  addOn: string[];
   tanggalJam: string;
-  alamatLengkap: string;
-  area: string;
-  catatanKhusus?: string;
   agreement: boolean;
 }
 
@@ -30,10 +25,17 @@ export default function BookingForm({ isOpen, onClose }: BookingFormProps) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid, touchedFields },
     reset,
     watch,
-  } = useForm<BookingFormData>();
+    setError,
+    clearErrors,
+  } = useForm<BookingFormData>({
+    mode: 'onBlur', // Validate on blur for better UX
+    defaultValues: {
+      agreement: false,
+    },
+  });
 
   const selectedService = watch('layanan');
   const selectedServiceData = servicesData.find(service => service.id === selectedService);
@@ -49,24 +51,12 @@ export default function BookingForm({ isOpen, onClose }: BookingFormProps) {
       errors.nomorWhatsApp = 'Nomor WhatsApp harus dimulai dengan 08 dan 10-13 digit';
     }
 
-    if (!data.usiaBayi) {
-      errors.usiaBayi = 'Pilih usia bayi';
-    }
-
     if (!data.layanan) {
       errors.layanan = 'Pilih layanan yang diinginkan';
     }
 
     if (!data.tanggalJam) {
       errors.tanggalJam = 'Pilih tanggal dan jam';
-    }
-
-    if (!data.alamatLengkap || data.alamatLengkap.length < 20) {
-      errors.alamatLengkap = 'Alamat lengkap minimal 20 karakter';
-    }
-
-    if (!data.area) {
-      errors.area = 'Pilih area layanan';
     }
 
     if (!data.agreement) {
@@ -149,11 +139,10 @@ export default function BookingForm({ isOpen, onClose }: BookingFormProps) {
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-6">
-          {/* Personal Info */}
+          {/* Essential Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-text-heading flex items-center gap-2">
-              <Phone className="w-5 h-5 text-accent-teal" />
-              Informasi Kontak
+              📝 Booking Baby Spa
             </h3>
 
             <div className="grid md:grid-cols-2 gap-4">
@@ -161,14 +150,33 @@ export default function BookingForm({ isOpen, onClose }: BookingFormProps) {
                 <label className="block text-sm font-medium text-text-heading mb-2">
                   Nama Ibu/Bapak *
                 </label>
-                <input
-                  {...register('namaIbu')}
-                  type="text"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent"
-                  placeholder="Masukkan nama lengkap"
-                />
+                <div className="relative">
+                  <input
+                    {...register('namaIbu', {
+                      required: 'Nama wajib diisi',
+                      minLength: { value: 3, message: 'Nama minimal 3 karakter' },
+                      maxLength: { value: 50, message: 'Nama maksimal 50 karakter' }
+                    })}
+                    type="text"
+                    className={`w-full px-4 py-3 pr-10 border rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent transition-colors ${
+                      errors.namaIbu
+                        ? 'border-red-300 bg-red-50'
+                        : touchedFields.namaIbu && !errors.namaIbu
+                        ? 'border-green-300 bg-green-50'
+                        : 'border-gray-200'
+                    }`}
+                    placeholder="Masukkan nama lengkap"
+                  />
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                    {errors.namaIbu && <AlertCircle className="w-5 h-5 text-red-500" />}
+                    {touchedFields.namaIbu && !errors.namaIbu && <Check className="w-5 h-5 text-green-500" />}
+                  </div>
+                </div>
                 {errors.namaIbu && (
-                  <p className="text-red-500 text-sm mt-1">{errors.namaIbu.message}</p>
+                  <div className="flex items-center gap-2 mt-2">
+                    <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+                    <p className="text-red-600 text-sm">{errors.namaIbu.message}</p>
+                  </div>
                 )}
               </div>
 
@@ -176,66 +184,73 @@ export default function BookingForm({ isOpen, onClose }: BookingFormProps) {
                 <label className="block text-sm font-medium text-text-heading mb-2">
                   Nomor WhatsApp *
                 </label>
-                <input
-                  {...register('nomorWhatsApp')}
-                  type="tel"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent"
-                  placeholder="081234567890"
-                />
+                <div className="relative">
+                  <input
+                    {...register('nomorWhatsApp', {
+                      required: 'Nomor WhatsApp wajib diisi',
+                      pattern: {
+                        value: /^08[0-9]{8,11}$/,
+                        message: 'Format: 08xxxxxxxxx (10-13 digit)'
+                      }
+                    })}
+                    type="tel"
+                    className={`w-full px-4 py-3 pr-10 border rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent transition-colors ${
+                      errors.nomorWhatsApp
+                        ? 'border-red-300 bg-red-50'
+                        : touchedFields.nomorWhatsApp && !errors.nomorWhatsApp
+                        ? 'border-green-300 bg-green-50'
+                        : 'border-gray-200'
+                    }`}
+                    placeholder="081234567890"
+                  />
+                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                    {errors.nomorWhatsApp && <AlertCircle className="w-5 h-5 text-red-500" />}
+                    {touchedFields.nomorWhatsApp && !errors.nomorWhatsApp && <Check className="w-5 h-5 text-green-500" />}
+                  </div>
+                </div>
                 {errors.nomorWhatsApp && (
-                  <p className="text-red-500 text-sm mt-1">{errors.nomorWhatsApp.message}</p>
+                  <div className="flex items-center gap-2 mt-2">
+                    <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+                    <p className="text-red-600 text-sm">{errors.nomorWhatsApp.message}</p>
+                  </div>
                 )}
               </div>
             </div>
-          </div>
-
-          {/* Baby Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-text-heading">Informasi Bayi</h3>
 
             <div>
               <label className="block text-sm font-medium text-text-heading mb-2">
-                Usia Bayi *
+                Pilih Layanan *
               </label>
-              <select
-                {...register('usiaBayi')}
-                className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent"
-              >
-                <option value="">Pilih usia bayi</option>
-                <option value="0-3 bulan">0-3 bulan</option>
-                <option value="3-6 bulan">3-6 bulan</option>
-                <option value="6-9 bulan">6-9 bulan</option>
-                <option value="9-12 bulan">9-12 bulan</option>
-                <option value="1-2 tahun">1-2 tahun</option>
-                <option value="2-5 tahun">2-5 tahun</option>
-              </select>
-              {errors.usiaBayi && (
-                <p className="text-red-500 text-sm mt-1">{errors.usiaBayi.message}</p>
-              )}
-            </div>
-          </div>
-
-          {/* Service Selection */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-text-heading">Pilih Layanan</h3>
-
-            <div>
-              <label className="block text-sm font-medium text-text-heading mb-2">
-                Layanan yang Diinginkan *
-              </label>
-              <select
-                {...register('layanan')}
-                className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent"
-              >
-                <option value="">Pilih layanan</option>
-                {servicesData.map((service) => (
-                  <option key={service.id} value={service.id}>
-                    {service.name} - {service.priceDisplay}
-                  </option>
-                ))}
-              </select>
+              <div className="relative">
+                <select
+                  {...register('layanan', {
+                    required: 'Pilih layanan yang diinginkan'
+                  })}
+                  className={`w-full px-4 py-3 pr-10 border rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent transition-colors appearance-none ${
+                    errors.layanan
+                      ? 'border-red-300 bg-red-50'
+                      : touchedFields.layanan && !errors.layanan
+                      ? 'border-green-300 bg-green-50'
+                      : 'border-gray-200'
+                  }`}
+                >
+                  <option value="">Pilih layanan yang diinginkan</option>
+                  {servicesData.map((service) => (
+                    <option key={service.id} value={service.id}>
+                      {service.name} - {service.priceDisplay}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                  {errors.layanan && <AlertCircle className="w-5 h-5 text-red-500" />}
+                  {touchedFields.layanan && !errors.layanan && selectedService && <Check className="w-5 h-5 text-green-500" />}
+                </div>
+              </div>
               {errors.layanan && (
-                <p className="text-red-500 text-sm mt-1">{errors.layanan.message}</p>
+                <div className="flex items-center gap-2 mt-2">
+                  <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+                  <p className="text-red-600 text-sm">{errors.layanan.message}</p>
+                </div>
               )}
             </div>
 
@@ -249,103 +264,71 @@ export default function BookingForm({ isOpen, onClose }: BookingFormProps) {
                 </div>
               </div>
             )}
-          </div>
-
-          {/* Schedule */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-text-heading flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-accent-teal" />
-              Jadwal & Lokasi
-            </h3>
-
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-text-heading mb-2">
-                  Tanggal & Jam *
-                </label>
-                <input
-                  {...register('tanggalJam')}
-                  type="datetime-local"
-                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent"
-                />
-                {errors.tanggalJam && (
-                  <p className="text-red-500 text-sm mt-1">{errors.tanggalJam.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-text-heading mb-2">
-                  Area Layanan *
-                </label>
-                <select
-                  {...register('area')}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent"
-                >
-                  <option value="">Pilih area</option>
-                  <option value="Kota Jogja">Kota Jogja</option>
-                  <option value="Sleman">Sleman</option>
-                  <option value="Bantul">Bantul</option>
-                  <option value="Kulon Progo">Kulon Progo</option>
-                  <option value="Magelang">Magelang</option>
-                  <option value="Lainnya">Lainnya</option>
-                </select>
-                {errors.area && (
-                  <p className="text-red-500 text-sm mt-1">{errors.area.message}</p>
-                )}
-              </div>
-            </div>
 
             <div>
               <label className="block text-sm font-medium text-text-heading mb-2">
-                Alamat Lengkap *
+                Tanggal & Jam *
               </label>
-              <textarea
-                {...register('alamatLengkap')}
-                rows={3}
-                className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent"
-                placeholder="Jl. Contoh No. 123, RT/RW 01/02, Kelurahan, Kecamatan, Kota"
-              />
-              {errors.alamatLengkap && (
-                <p className="text-red-500 text-sm mt-1">{errors.alamatLengkap.message}</p>
+              <div className="relative">
+                <input
+                  {...register('tanggalJam', {
+                    required: 'Pilih tanggal dan jam layanan',
+                    validate: (value) => {
+                      const selectedDate = new Date(value);
+                      const now = new Date();
+                      const tomorrow = new Date(now);
+                      tomorrow.setDate(tomorrow.getDate() + 1);
+
+                      return selectedDate >= tomorrow || 'Jadwal minimal H+1 dari hari ini';
+                    }
+                  })}
+                  type="datetime-local"
+                  className={`w-full px-4 py-3 pr-10 border rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent transition-colors ${
+                    errors.tanggalJam
+                      ? 'border-red-300 bg-red-50'
+                      : touchedFields.tanggalJam && !errors.tanggalJam
+                      ? 'border-green-300 bg-green-50'
+                      : 'border-gray-200'
+                  }`}
+                />
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                  {errors.tanggalJam && <AlertCircle className="w-5 h-5 text-red-500" />}
+                  {touchedFields.tanggalJam && !errors.tanggalJam && <Check className="w-5 h-5 text-green-500" />}
+                </div>
+              </div>
+              {errors.tanggalJam && (
+                <div className="flex items-center gap-2 mt-2">
+                  <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+                  <p className="text-red-600 text-sm">{errors.tanggalJam.message}</p>
+                </div>
               )}
             </div>
           </div>
 
-          {/* Special Notes */}
-          <div>
-            <label className="block text-sm font-medium text-text-heading mb-2">
-              Catatan Khusus (Opsional)
-            </label>
-            <textarea
-              {...register('catatanKhusus')}
-              rows={2}
-              className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-accent-teal focus:border-transparent"
-              placeholder="Alergi, kondisi khusus bayi, dll."
-            />
-            {errors.catatanKhusus && (
-              <p className="text-red-500 text-sm mt-1">{errors.catatanKhusus.message}</p>
-            )}
-          </div>
-
           {/* Agreement */}
-          <div className="flex items-start gap-3">
-            <input
-              {...register('agreement')}
-              type="checkbox"
-              className="mt-1 w-4 h-4 text-accent-teal border-gray-300 rounded focus:ring-accent-teal"
-            />
-            <div>
-              <label className="text-sm text-text-body">
+          <div className="space-y-2">
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                {...register('agreement', {
+                  required: 'Anda harus menyetujui syarat dan ketentuan untuk melanjutkan'
+                })}
+                type="checkbox"
+                className="mt-1 w-4 h-4 text-accent-teal border-gray-300 rounded focus:ring-accent-teal"
+              />
+              <span className="text-sm text-text-body">
                 Saya menyetujui{' '}
                 <a href="#" className="text-accent-teal hover:underline">
                   syarat & ketentuan
                 </a>{' '}
                 layanan Gemoya Baby Spa *
-              </label>
-              {errors.agreement && (
-                <p className="text-red-500 text-sm mt-1">{errors.agreement.message}</p>
-              )}
-            </div>
+              </span>
+            </label>
+            {errors.agreement && (
+              <div className="flex items-center gap-2 ml-7">
+                <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+                <p className="text-red-600 text-sm">{errors.agreement.message}</p>
+              </div>
+            )}
           </div>
 
           {/* Submit Button */}
@@ -358,7 +341,7 @@ export default function BookingForm({ isOpen, onClose }: BookingFormProps) {
               {isSubmitting ? 'Mengirim Booking...' : 'Kirim Booking & Konsultasi Gratis'}
             </button>
             <p className="text-center text-sm text-text-body mt-3">
-              Gratis konsultasi • Konfirmasi dalam 1x24 jam
+              Detail lengkap akan dikumpulkan via WhatsApp • Konfirmasi dalam 1x24 jam
             </p>
           </div>
         </form>

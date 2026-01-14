@@ -44,7 +44,11 @@ const getIconComponent = (iconName: string) => {
   return icons[iconName] || Baby;
 };
 
-export default function ServiceTabs() {
+interface ServiceTabsProps {
+  onBookingClick?: () => void;
+}
+
+export default function ServiceTabs({ onBookingClick }: ServiceTabsProps) {
   const [activeTab, setActiveTab] = useState('baby-care');
 
   const activeServices = servicesData.filter(service => service.category === activeTab);
@@ -132,7 +136,10 @@ export default function ServiceTabs() {
                   </div>
 
                   {/* CTA Button */}
-                  <button className="w-full btn-primary text-sm py-2">
+                  <button
+                    onClick={onBookingClick}
+                    className="w-full btn-primary text-sm py-2"
+                  >
                     Pesan
                   </button>
                 </div>
@@ -211,7 +218,10 @@ export default function ServiceTabs() {
                       )}
                     </div>
 
-                    <button className="btn-outline text-xs px-3 py-2">
+                    <button
+                      onClick={onBookingClick}
+                      className="btn-outline text-xs px-3 py-2"
+                    >
                       Pesan Sekarang
                     </button>
                   </div>
@@ -231,10 +241,16 @@ export default function ServiceTabs() {
               Konsultasikan kebutuhan bayi Anda dengan terapis kami secara gratis
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">
+              <button
+                onClick={onBookingClick}
+                className="btn-primary"
+              >
                 Booking Sekarang
               </button>
-              <button className="btn-secondary">
+              <button
+                onClick={() => window.open('https://wa.me/6285920255497?text=Halo%20Gemoya,%20saya%20ingin%20bertanya%20tentang%20layanan%20baby%20spa', '_blank')}
+                className="btn-secondary"
+              >
                 Tanya Terapis
               </button>
             </div>

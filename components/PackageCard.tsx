@@ -22,9 +22,10 @@ interface PackageCardProps {
     image: string;
   };
   isMobile?: boolean;
+  onBookingClick?: () => void;
 }
 
-export default function PackageCard({ pkg, isMobile = false }: PackageCardProps) {
+export default function PackageCard({ pkg, isMobile = false, onBookingClick }: PackageCardProps) {
   const getIconComponent = (iconName: string) => {
     const icons: Record<string, any> = {
       Package, Star, Crown
@@ -86,7 +87,10 @@ export default function PackageCard({ pkg, isMobile = false }: PackageCardProps)
         </div>
 
         {/* CTA Button */}
-        <button className="w-full btn-primary text-sm py-2">
+        <button
+          onClick={onBookingClick}
+          className="w-full btn-primary text-sm py-2"
+        >
           {isMembership ? 'Langganan' : 'Pesan'}
         </button>
       </div>
@@ -172,7 +176,10 @@ export default function PackageCard({ pkg, isMobile = false }: PackageCardProps)
               )}
             </div>
 
-            <button className="btn-outline text-xs px-3 py-2">
+            <button
+              onClick={onBookingClick}
+              className="btn-outline text-xs px-3 py-2"
+            >
               {isMembership ? 'Langganan' : 'Pesan Paket'}
             </button>
           </div>
